@@ -14,7 +14,7 @@ import Skills from '../Skills/Skills';
 const Home = () => {
     return (
         <div>
-            {/* <Navbar /> */}
+            <Navbar />
             <Intro />
             <About/>
             <Services />
