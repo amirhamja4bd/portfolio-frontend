@@ -2,12 +2,9 @@
 import { motion } from "framer-motion";
 import React, { useContext } from "react";
 import "./Services.css";
-import Card from "../Card/Card";
-import HeartEmoji from "../../img/heartemoji.png";
 import s1 from "./s1.svg";
 import s2 from "./s2.svg";
 import s3 from "./s3.svg";
-import Humble from "../../img/humble.png";
 import { themeContext } from "../../Context";
 import { FaCode } from 'react-icons/fa';
 

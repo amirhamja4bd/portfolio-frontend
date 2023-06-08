@@ -39,19 +39,19 @@ const Portfolio = () => {
 ]
 
   return (
-    <section id="portfolio" class="portfolio-wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 text-center mb-4">
-            <span class="subtitle">My Complete Project</span>
+    <section id="portfolio" className="portfolio-wrapper">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 text-center mb-4">
+            <span className="subtitle">My Complete Project</span>
             <h2>My Latest Project</h2>
-            <p>There are many variations of Lorem ipsum available, <br class="d-none d-md-block" />
+            <p>There are many variations of Lorem ipsum available, <br className="d-none d-md-block" />
               but the majority have suffered alteration.</p>
           </div>
         </div>
-        <div class="row">
+        <div className="row">
         {PValue?.map((p, i)=>(
-          <div className="col-lg-3 col-md-6 mb-4">
+          <div key={i} className="col-lg-3 col-md-6 mb-4">
             <div className="card p-0"  onClick={() => navigate('/portfolio/details')}>
             <span style={{ backgroundImage: `url(${p.image})` }}></span>
             </div>

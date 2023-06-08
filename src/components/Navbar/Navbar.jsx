@@ -3,7 +3,7 @@ import Toggle from "../Toggle/Toggle";
 import "./Navbar.css";
 import { Link } from "react-scroll";
 import { themeContext } from "../../Context";
-import portfolio from "../../img/portfolio.png";
+import portfolio from "../../assets/img/portfolio.png";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
