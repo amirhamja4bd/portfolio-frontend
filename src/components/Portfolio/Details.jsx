@@ -9,7 +9,7 @@ const Details = () => {
       };
 
     return (
-        <div>
+        <div className='py-5'>
             <button className='secondary-button p-0 py-1 px-2' onClick={handleClick}>Go Back</button>
         </div>
     );
