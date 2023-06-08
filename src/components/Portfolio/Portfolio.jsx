@@ -14,27 +14,40 @@ const Portfolio = () => {
 
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
+  
 
   const PValue = [
     {
+        _id: 1,
         image: portfolio,
         title:  "Frontend",
         description:  "Building engaging user interfaces with React, Next.js, and JavaScript.",
+        technology: 'React, Next, MongoDb, Express Nodejs',
+        liveLink: '#'
     },
     {
+        _id: 2,
         image: Ostad,
         title:  "Backend",
         description: "Developing server-side applications with Node.js, Express.js, and MongoDB.",
+        technology: 'React, Next, MongoDb, Express Nodejs',
+        liveLink: '#'
     },
     {
+        _id: 3,
         image: Lead,
         title:  "MERN Full Stack",
         description:  "Creating end-to-end web applications using the MERN stack (MongoDB, Express.js, React, Node.js).",
+        technology: 'React, Next, MongoDb, Express Nodejs',
+        liveLink: '#'
     },
     {
+        _id: 4,
         image: Zayan,
         title:  "Backend",
         description: "Developing server-side applications with Node.js, Express.js, and MongoDB.",
+        technology: 'React, Next, MongoDb, Express Nodejs',
+        liveLink: '#'
     },
 ]
 
@@ -52,8 +65,8 @@ const Portfolio = () => {
         <div className="row">
         {PValue?.map((p, i)=>(
           <div key={i} className="col-lg-3 col-md-6 mb-4">
-            <div className="card p-0"  onClick={() => navigate('/portfolio/details')}>
-            <span style={{ backgroundImage: `url(${p.image})` }}></span>
+            <div className="card p-0"  onClick={() => navigate(`/project/${p?._id}`)}>
+              <span style={{ backgroundImage: `url(${p.image})` }}></span>
             </div>
           </div>
         ))}

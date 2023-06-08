@@ -24,7 +24,7 @@ function App() {
             <Toaster position='top-right'/>
             <Routes>
               <Route path='/' element={ <Home/>} />
-              <Route path='/portfolio/details' element={ <Details/>} />
+              <Route path='/project/:id' element={ <Details/>} />
             </Routes>
           </BrowserRouter>
         </div>
