@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 import { motion } from "framer-motion";
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from 'react-icons/fa';
-import portfolio from "../../img/portfolio.png";
+import portfolio from "../../assets/img/portfolio.png";
 
 const Footer = () => {
   return (

@@ -5,15 +5,15 @@ import portfolio from "../../assets/portfolio/Portfolio.png";
 import Ostad from "../../assets/portfolio/Ostad.png";
 import Lead from "../../assets/portfolio/LeadEdocare.png";
 import Zayan from "../../assets/portfolio/Zayan-Shop.png";
-// import { themeContext } from "../../Context";
+import { themeContext } from "../../Context";
 import { useNavigate } from "react-router-dom";
 
 const Portfolio = () => {
 
   const navigate = useNavigate();
 
-  // const theme = useContext(themeContext);
-  // const darkMode = theme.state.darkMode;
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
 
   const PValue = [
     {
@@ -39,19 +39,19 @@ const Portfolio = () => {
 ]
 
   return (
-    <section id="portfolio" class="portfolio-wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 text-center mb-4">
-            <span class="subtitle">My Complete Project</span>
+    <section id="portfolio" className="portfolio-wrapper">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 text-center mb-4">
+            <span className="subtitle">My Complete Project</span>
             <h2>My Latest Project</h2>
-            <p>There are many variations of Lorem ipsum available, <br class="d-none d-md-block" />
+            <p>There are many variations of Lorem ipsum available, <br className="d-none d-md-block" />
               but the majority have suffered alteration.</p>
           </div>
         </div>
-        <div class="row">
+        <div className="row">
         {PValue?.map((p, i)=>(
-          <div className="col-lg-3 col-md-6 mb-4">
+          <div key={i} className="col-lg-3 col-md-6 mb-4">
             <div className="card p-0"  onClick={() => navigate('/portfolio/details')}>
             <span style={{ backgroundImage: `url(${p.image})` }}></span>
             </div>

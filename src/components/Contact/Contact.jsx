@@ -30,12 +30,14 @@ const Contact = () => {
               <label className="col-sm-3 col-lg-4">Call us Directly:</label>
 
               <div className="col-sm-9 col-lg-8 mb-3 mb-lg-2 text-md-start">
-                <a href="javascript:void(0)">+8801756386529</a>
+                {/* <a href="javascript:void(0)">+8801756386529</a> */}
+                <a href="mailto:amirhamja4bd@gmail.com">amirhamja4bd@gmail.com</a>
               </div>
 
               <label className="col-sm-3 col-lg-4">Contact Email:</label>
 
               <div className="col-sm-9 col-lg-8 mb-lg-2 text-md-start">
+                {/* <a href="mailto:amirhamja4bd@gmail.com">amirhamja4bd@gmail.com</a> */}
                 <a href="mailto:amirhamja4bd@gmail.com">amirhamja4bd@gmail.com</a>
               </div>
             </div>

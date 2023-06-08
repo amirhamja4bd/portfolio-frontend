@@ -1,17 +1,17 @@
 
 import { motion } from "framer-motion";
-// import React, { useContext } from "react";
+import React, { useContext } from "react";
 import "./Services.css";
 import s1 from "./s1.svg";
 import s2 from "./s2.svg";
 import s3 from "./s3.svg";
-// import { themeContext } from "../../Context";
+import { themeContext } from "../../Context";
 import { FaCode } from 'react-icons/fa';
 
 const Services = () => {
 
-  // const theme = useContext(themeContext);
-  // const darkMode = theme.state.darkMode;
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
 
   const SValue = [
     {

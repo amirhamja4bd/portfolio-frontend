@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
-// import Toggle from "../Toggle/Toggle";
+import Toggle from "../Toggle/Toggle";
 import "./Navbar.css";
 import { Link } from "react-scroll";
-// import { themeContext } from "../../Context";
-import portfolio from "../../img/portfolio.png";
+import { themeContext } from "../../Context";
+import portfolio from "../../assets/img/portfolio.png";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
-  // const theme = useContext(themeContext);
-  // const darkMode = theme.state.darkMode;
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
   const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
@@ -33,8 +33,8 @@ const Navbar = () => {
       id="Navbar"
       style={{
         // background: darkMode ? scroll ? "var(--secondery-color)" : "transparent" : scroll ? "var(--bg-white)" : "transparent",
-        background:  scroll && "transparent" ,
-        color:  scroll && "white" ,
+        background: darkMode ? scroll && "transparent" : scroll && "transparent",
+        color: darkMode ? scroll && "white" : scroll && "black" ,
         backdropFilter: scroll ? "blur(10px)" : "none",
       }}
     >
