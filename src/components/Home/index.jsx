@@ -14,16 +14,16 @@ import Skills from '../Skills/Skills';
 const Home = () => {
     return (
         <div>
-            <Navbar />
+            {/* <Navbar />
             <Intro />
             <About/>
             <Services />
             <Skills/>
-            <Experience />
+            <Experience /> */}
             {/* <Works /> */}
-            <Portfolio />
+            {/* <Portfolio />
             <Testimonial />
-            <Contact />
+            <Contact /> */}
             <Footer />
         </div>
     );
