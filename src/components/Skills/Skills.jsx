@@ -31,28 +31,28 @@ const Skills = () => {
     ]
     const PValue = [
         {
-            title: "Javascript",
+            title: "Communication",
             percent: 85
         },
         {
-            title: "ES6 ",
-            percent: 80
+            title: "Team Work",
+            percent: 90
         },
         {
-            title: " React",
+            title: " Project Management",
             percent: 75
         },
         {
-            title: "Express ",
-            percent:  75
+            title: "Creativity ",
+            percent:  80
         },
         {
-            title: "MongoDB ",
-            percent: 70
+            title: "Adaptability ",
+            percent: 80
         },
         {
-            title: " Git & Github",
-            percent: 55
+            title: " Attention to Detail",
+            percent: 95
         },
     ]
     

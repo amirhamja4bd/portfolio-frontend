@@ -91,8 +91,8 @@ const Navbar = () => {
           </ul>
         </div>
         {/* <Toggle /> */}
-        <Link to="contact" spy={true} smooth={true}>
-          <button className="main-btn">Hire_Me</button>
+        <Link to="contact" spy={true} smooth={true} className="">
+          <button className="main-btn">Hire&nbsp;Me</button>
         </Link>
       </div>
     </div>
