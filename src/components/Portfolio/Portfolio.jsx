@@ -5,15 +5,15 @@ import portfolio from "../../assets/portfolio/Portfolio.png";
 import Ostad from "../../assets/portfolio/Ostad.png";
 import Lead from "../../assets/portfolio/LeadEdocare.png";
 import Zayan from "../../assets/portfolio/Zayan-Shop.png";
-import { themeContext } from "../../Context";
+// import { themeContext } from "../../Context";
 import { useNavigate } from "react-router-dom";
 
 const Portfolio = () => {
 
   const navigate = useNavigate();
 
-  const theme = useContext(themeContext);
-  const darkMode = theme.state.darkMode;
+  // const theme = useContext(themeContext);
+  // const darkMode = theme.state.darkMode;
 
   const PValue = [
     {

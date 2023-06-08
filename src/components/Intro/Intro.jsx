@@ -10,7 +10,7 @@ import FloatinDiv from "../FloatingDiv/FloatingDiv";
 import Github from "../../img/github.png";
 import LinkedIn from "../../img/linkedin.png";
 import Instagram from "../../img/instagram.png";
-import { themeContext } from "../../Context";
+// import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { FaGithub, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
@@ -19,8 +19,8 @@ const Intro = () => {
   const transition = { duration: 2, type: "spring" };
 
   // context
-  const theme = useContext(themeContext);
-  const darkMode = theme.state.darkMode;
+  // const theme = useContext(themeContext);
+  // const darkMode = theme.state.darkMode;
 
   return (
     <motion.div
@@ -34,9 +34,9 @@ const Intro = () => {
               <div className="col-lg-7 ps-lg-5 text-center text-lg-start mt-3">
                   <div className="my-3 my-lg-0">
                   <div className="col-sm-12 text-center text-md-start">
-                      <h6 style={{ color: darkMode ? "var(--text-gray)" : "black" }} >WELCOME TO MY WORLD</h6>
-                      <h1 style={{ color: darkMode ? "white" : "" }}>I'm Amir Hamza <br /></h1>
-                      <span style={{ color: darkMode ? "white" : "black" }}>MERN Stack Developer</span>
+                      <h6 style={{ color:  "var(--text-gray)" }} >WELCOME TO MY WORLD</h6>
+                      <h1 style={{ color:  "white" }}>I'm Amir Hamza <br /></h1>
+                      <span style={{ color:  "white"  }}>MERN Stack Developer</span>
                       <p className="mt-3">Seeking a junior-level web developer position where I can
                         use my passion for building dynamic web applications,
                         technical expertise, and creativity to deliver cutting-edge

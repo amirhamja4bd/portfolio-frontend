@@ -4,12 +4,12 @@ import App from './App.jsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import { ThemeProvider } from './Context.jsx'
+// import { ThemeProvider } from './Context.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ThemeProvider>
+    {/* <ThemeProvider> */}
       <App />
-    </ThemeProvider>
+    {/* </ThemeProvider> */}
   </React.StrictMode>,
 )

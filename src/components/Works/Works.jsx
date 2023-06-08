@@ -1,17 +1,17 @@
-import React, { useContext } from "react";
+// import React, { useContext } from "react";
 import "./Works.css";
 import Upwork from "../../img/Upwork.png";
 import Fiverr from "../../img/fiverr.png";
 import Amazon from "../../img/amazon.png";
 import Shopify from "../../img/Shopify.png";
 import Facebook from "../../img/Facebook.png";
-import { themeContext } from "../../Context";
+// import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import {Link} from 'react-scroll'
 const Works = () => {
   // context
-  const theme = useContext(themeContext);
-  const darkMode = theme.state.darkMode;
+  // const theme = useContext(themeContext);
+  // const darkMode = theme.state.darkMode;
 
   // transition
   return (
@@ -20,7 +20,7 @@ const Works = () => {
       <div className="w-left">
         <div className="awesome">
           {/* dark Mode */}
-          <span style={{ color: darkMode ? "white" : "" }}>
+          <span style={{ color: "white" }}>
             Works for All these
           </span>
           <span>Brands & Clients</span>
