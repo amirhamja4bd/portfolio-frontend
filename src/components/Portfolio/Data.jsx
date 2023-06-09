@@ -1,5 +1,5 @@
 import portfolio from "../../assets/portfolio/Portfolio.png";
-import portfolio1 from "../../assets/portfolio/Portfolio1.png";
+import portfolio1 from "../../assets/portfolio/Portfolio-details.png";
 import Ostad from "../../assets/portfolio/OstadLms.png";
 import Ostad2 from "../../assets/portfolio/OstadLms-coursePage.png";
 import Ostad3 from "../../assets/portfolio/OstadLms-studentDashboard.png";
