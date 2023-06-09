@@ -36,6 +36,13 @@ const Testimonial = () => {
 
   return (
     <div className="t-wrapper" id="testimonial">
+      <div className="text-center">
+      {/* <span className="subtitle">Testimonial</span> */}
+            <h2>Testimonial</h2>
+            <p>
+            What Thinks Our Teammates and Instructors
+            </p>
+      </div>
       <div className="t-heading">
         <span>Clients always get </span>
         <span>Exceptional Work </span>
@@ -53,7 +60,7 @@ const Testimonial = () => {
         {clients.map((client, index) => {
           return (
             <SwiperSlide key={index}>
-              <div className="testimonial">
+              <div className="testimonial move ">
                 <img src={client.img} alt="" />
                 <p>{client.review}</p>
               </div>

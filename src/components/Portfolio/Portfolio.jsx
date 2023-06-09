@@ -1,55 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Portfolio.css";
 import "swiper/css";
-import portfolio from "../../assets/portfolio/Portfolio.png";
-import Ostad from "../../assets/portfolio/Ostad.png";
-import Lead from "../../assets/portfolio/LeadEdocare.png";
-import Zayan from "../../assets/portfolio/Zayan-Shop.png";
+import { PValue } from './Data';
 import { themeContext } from "../../Context";
 import { useNavigate } from "react-router-dom";
 
 const Portfolio = () => {
-
   const navigate = useNavigate();
-
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
-  
 
-  const PValue = [
-    {
-        _id: 1,
-        image: portfolio,
-        title:  "Frontend",
-        description:  "Building engaging user interfaces with React, Next.js, and JavaScript.",
-        technology: 'React, Next, MongoDb, Express Nodejs',
-        liveLink: '#'
-    },
-    {
-        _id: 2,
-        image: Ostad,
-        title:  "Backend",
-        description: "Developing server-side applications with Node.js, Express.js, and MongoDB.",
-        technology: 'React, Next, MongoDb, Express Nodejs',
-        liveLink: '#'
-    },
-    {
-        _id: 3,
-        image: Lead,
-        title:  "MERN Full Stack",
-        description:  "Creating end-to-end web applications using the MERN stack (MongoDB, Express.js, React, Node.js).",
-        technology: 'React, Next, MongoDb, Express Nodejs',
-        liveLink: '#'
-    },
-    {
-        _id: 4,
-        image: Zayan,
-        title:  "Backend",
-        description: "Developing server-side applications with Node.js, Express.js, and MongoDB.",
-        technology: 'React, Next, MongoDb, Express Nodejs',
-        liveLink: '#'
-    },
-]
+  const [filter, setFilter] = useState("all"); // Initial filter value is "all"
+
+  // Filter projects based on the selected filter value
+  const filteredProjects = filter === "all" ? PValue : PValue.filter(p => p.type === filter);
 
   return (
     <section id="portfolio" className="portfolio-wrapper">
@@ -58,18 +22,34 @@ const Portfolio = () => {
           <div className="col-sm-12 text-center mb-4">
             <span className="subtitle">My Complete Project</span>
             <h2>My Latest Project</h2>
-            <p>There are many variations of Lorem ipsum available, <br className="d-none d-md-block" />
-              but the majority have suffered alteration.</p>
+            <p>
+              Here are some of my personal projects and team projects, <br className="d-none d-md-block" />
+              Check out my projects if you have time
+            </p>
           </div>
         </div>
-        <div className="row">
-        {PValue?.map((p, i)=>(
-          <div key={i} className="col-lg-3 col-md-6 mb-4">
-            <div className="card p-0"  onClick={() => navigate(`/project/${p?._id}`)}>
-              <span style={{ backgroundImage: `url(${p.image})` }}></span>
-            </div>
+        <div className="row main  mx-auto">
+          <div className="filter col-12 d-flex justify-content-center mb-5">
+            <button className={filter === "all" ? "tab-btn active mx-2" : "tab-btn mx-2"} onClick={() => setFilter("all")}>
+              All
+            </button>
+            <button className={filter === "personal" ? "tab-btn active mx-2" : "tab-btn mx-2"} onClick={() => setFilter("personal")}>
+              Personal
+            </button>
+            <button className={filter === "team" ? "tab-btn active mx-2" : "tab-btn mx-2"} onClick={() => setFilter("team")}>
+              Team
+            </button>
           </div>
-        ))}
+          {filteredProjects.map((p) => (
+            <div key={p._id} className="col-lg-3 col-md-6 mb-4">
+              <div className="card p-0 h-50 " onClick={() => navigate(`/project/${p._id}`)}>
+                <span style={{ backgroundImage: `url(${p.thumbnail})` }} className="span"></span>
+              </div>
+              <div className="py-3 px-2 rounded-bottom">
+                <p className="portfolio-title">{p.title}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -77,6 +57,7 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
 
 
 // import React, { useContext } from "react";

@@ -1,12 +1,9 @@
-import React from 'react';
-import portfolio from "../../assets/portfolio/Portfolio.png";
-import Ostad from "../../assets/portfolio/Ostad.png";
-import Lead from "../../assets/portfolio/LeadEdocare.png";
-import Zayan from "../../assets/portfolio/Zayan-Shop.png";
+import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Image } from 'antd';
 import { useState } from 'react';
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft, FaFacebookF, FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { PValue } from './Data';
 
 const Details = () => {
     const navigate = useNavigate();
@@ -17,76 +14,61 @@ const Details = () => {
       };
 
       const { id } = useParams();
-      
-      const PValue = [
-        {
-            _id: 1,
-            thumbnail: portfolio,
-            images: [portfolio, portfolio],
-            title:  "Portfolio Website",
-            description:  "Building engaging user interfaces with React, Next.js, and JavaScript. Developing server-side applications with Node.js, Express.js, and MongoDB. Creating end-to-end web applications using the MERN stack (MongoDB, Express.js, React, Node.js) Developing server-side applications with Node.js, Express.js, and MongoDB..",
-            technology: 'React, Next, MongoDb, Express Nodejs',
-            tags: [ 'Reactjs', 'Ant Design' , ' Bootstrap',] ,
-            liveLink: '#'
-        },
-        {
-            _id: 2,
-            thumbnail: Ostad,
-            images: [Ostad, Ostad],
-            title:  "Online Learning Management System",
-            description: "Building engaging user interfaces with React, Next.js, and JavaScript. Developing server-side applications with Node.js, Express.js, and MongoDB. Creating end-to-end web applications using the MERN stack (MongoDB, Express.js, React, Node.js) Developing server-side applications with Node.js, Express.js, and MongoDB.",
-            technology: 'React, Next, MongoDb, Express Nodejs',
-            tags: [ 'Reactjs' , 'Nextjs' , 'MongoDB' , 'Mongoose' , 'Express' , 'Tailwind css' , 'Ant Design' ,] ,
-            liveLink: '#'
-        },
-        {
-            _id: 3,
-            thumbnail: Lead,
-            images: [Lead, Lead],
-            title:  "LMS for Children",
-            description:  "Building engaging user interfaces with React, Next.js, and JavaScript. Developing server-side applications with Node.js, Express.js, and MongoDB. Creating end-to-end web applications using the MERN stack (MongoDB, Express.js, React, Node.js) Developing server-side applications with Node.js, Express.js, and MongoDB.",
-            technology: 'React, Next, MongoDb, Express Nodejs',
-            tags: [ 'Reactjs' , 'Nextjs' , 'MongoDB' , 'Mongoose' , 'Express' , 'Tailwind css' , 'Ant Design' ,] ,
-            liveLink: '#'
-        },
-        {
-            _id: 4,
-            thumbnail: Zayan,
-            images: [Zayan, Zayan],
-            title:  "Ecommerce Website",
-            description: "Building engaging user interfaces with React, Next.js, and JavaScript. Developing server-side applications with Node.js, Express.js, and MongoDB. Creating end-to-end web applications using the MERN stack (MongoDB, Express.js, React, Node.js) Developing server-side applications with Node.js, Express.js, and MongoDB.",
-            technology: 'React, Next, MongoDb, Express Nodejs',
-            tags: [ 'Reactjs' , 'MongoDB' , 'Mongoose' , 'Express' , ' Bootstrap' , 'Ant Design' ,] ,
-            liveLink: '#'
-        },
-    ]
+
+      useEffect(() => {
+      }, [id])
 
     const project = PValue.find((p) => p._id === parseInt(id));
 
+    console.log("Project", project);
+    
     return (
         <div className=''>
             {project && (
                 <>
-            <button className='secondary-button p-0 py-1 px-2 my-4' onClick={handleClick}> <FaArrowLeft/> Back</button>
+            <button autoFocus={true} className='secondary-button p-0 py-1 px-2 my-4' onClick={handleClick}> <FaArrowLeft/> Back</button>
             <div className="row mt-3">
                 <div className="col-md-6">
                     <div className="">
                     <h4 className='pb-4'>{project.title}</h4>
                     <p>{project.description}</p>
                     {project?.tags?.map((tag, i)=> (
-                        <a  className='tag-btn my-2 mx-2'>{tag}</a>
+                        <a key={i} className='tag-btn my-2 mx-2'>{tag}</a>
                     ))}
                     </div>
-                    <a href="" className='main-btn-fill ms-2 mt-4 '>Live Demo</a>
+                    <div className="">
+                        <a target='_blank' href={project.liveLink} className='main-btn-fill ms-2 mt-4 '>Live Demo</a>
+                        <a target='_blank' href={project.social.githubClient} className='main-btn ms-2 mt-4 '>Github Client</a>
+                        <a target='_blank' href={project.social.githubServer} className='main-btn ms-2 mt-4 '>Github Server</a>
+                    </div>
+                    <div className="i-icons d-flex justify-content-md-start justify-content-center my-5">
+                        <a href="https://github.com/amirhamja4bd" target="_blank">
+                        <FaGithub />
+                        </a>
+                        <a href="https://www.linkedin.com/in/amirhamja656/" target="_blank">
+                        <FaLinkedinIn />
+                        </a>
+                        <a href="https://www.facebook.com/amirhamja360" target="_blank">
+                        <FaFacebookF />
+                        </a>
+                  </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 relative" >
                     <Image
                         preview={{
                         visible: false,
                         }}
                         width={600}
+                        height={500}
                         src={project.thumbnail}
                         onClick={() => setVisible(true)}
+                        style={{
+                            objectFit: 'cover',
+                            objectPosition: 'top',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                          }}
                     />
                     <div
                         style={{
