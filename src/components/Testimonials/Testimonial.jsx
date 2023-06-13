@@ -40,17 +40,17 @@ const Testimonial = () => {
       {/* <span className="subtitle">Testimonial</span> */}
             <h2>Testimonial</h2>
             <p>
-            What Thinks Our Teammates and Instructors
+            What Thinks My Teammates and Instructors
             </p>
       </div>
-      <div className="t-heading">
+      {/* <div className="t-heading">
         <span>Clients always get </span>
         <span>Exceptional Work </span>
         <span>from me...</span>
       <div className="blur t-blur1" style={{ background: "var(--purple)" }}></div>
       <div className="blur t-blur2" style={{ background: "skyblue" }}></div>
 
-      </div>
+      </div> */}
       <Swiper
         // install Swiper modules
         modules={[Pagination]}
