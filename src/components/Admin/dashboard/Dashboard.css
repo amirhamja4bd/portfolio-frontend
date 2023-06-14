@@ -12,12 +12,13 @@
     --sky-color:#E4E9F7;
     --light-black:#1d1b31;
 }
-/* body{
+ body{
   position: relative;
   min-height: 100vh;
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
+/*
 ::selection{
   color:var(--white-color);
   background: var(--black-color);
@@ -28,7 +29,7 @@
   left:0;
   height:100%;
   width:78px;
-  background:var(--black-color);
+  background:var(--secondery-color);
   padding:6px 14px;
   z-index:99;
   transition:all 0.5s ease;
@@ -70,8 +71,11 @@
 .sidebar.active #btn{
   left:90%;
 }
+.sidebar.active .content .outlet {
+  margin-left: 200px!important;
+}
 .sidebar ul{
-  margin-top:20px;
+  margin-top:10px;
 }
 .sidebar ul li{
   position:relative;
@@ -90,6 +94,7 @@
   height:35px;
   width:120px;
   background: var(--white-color);
+  color: #11101d;
   line-height: 35px;
   text-align: center;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
@@ -117,33 +122,10 @@
   opacity:1;
   top:50%;
 }
-.sidebar ul li input{
-  position:absolute;
-  height:100%;
-  width:100%;
-  left:0;
-  top:0;
-  border-radius: 12px;
-  outline:none;
-  border:none;
-  background: #1d1b31;
-  padding-left:50px;
-  font-size: 18px;
-  color:var(--white-color);
-}
-.sidebar ul li .bx-search{
-  position:relative;
-  z-index: 99;
-  color:var(--white-color);
-  font-size: 22px;
-  transition:all 0.5s ease;
-}
-.sidebar ul li .bx-search:hover{
-  background:var(--white-color);
-  color:#1d1b31;
-}
+
+
 .sidebar ul li a{
-  color:var(--white-color);
+  color:var(--gray-color);
   display:flex;
   align-items:center;
   text-decoration: none;
@@ -151,8 +133,24 @@
   white-space: nowrap;
   transition:all 0.4s ease;
 }
-
+.sidebar ul li a.active{
+  color: var(--bg-dark-blue);
+  background: var(--white-color);
+  display:flex;
+  align-items:center;
+  text-decoration: none;
+  border-radius: 12px;
+  white-space: nowrap;
+  transition:all 0.4s ease;
+}
+ul{
+  padding: 0!important;
+}
 .sidebar ul li a:hover{
+  color:var(--black-color);
+  background:var(--white-color);
+}
+.sidebar ul li a:active{
   color:var(--black-color);
   background:var(--white-color);
 }
@@ -192,7 +190,8 @@
   transition:all 0.4s ease;
 }
 .sidebar.active .content .user{
-  background:var(--light-black);
+  background:var(--bg-dark-blue);
+  /* border-right: 1px solid var(--secondery-color); */
 }
 .content .user .user_details{
   display:flex;
@@ -262,5 +261,10 @@
 .home_content p{
   margin-bottom:15px;
 }
-        
+    
+span{
+  font-size: 14px!important;
+  font-weight: 600!important;
+  /* color: var(--black-color); */
+}
       

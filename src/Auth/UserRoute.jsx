@@ -3,18 +3,18 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
 import Loading from './Loading';
+import { getToken } from '../helper/FormHHelper';
 
 const UserRoute = () => {
 
-    const [auth, setAuth] = useAuth();
+    const token = getToken()
 
     const [ok, setOk] = useState();
 
     useEffect(()=>{
         const isUser = async ()=>{
-            const {data} = await axios.get(`/is-user`);
+            const {data} = await axios.get(`/is-view`);
             if(data.ok){
                 setOk(true);
 
@@ -23,8 +23,8 @@ const UserRoute = () => {
                 setOk(false);
             }
         };
-        if(auth?.token) isUser();
-    },[auth?.token]);
+        if(token) isUser();
+    },[token]);
 
     return ok ? <Outlet/> : <Loading/>
 

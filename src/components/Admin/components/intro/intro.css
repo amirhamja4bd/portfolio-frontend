@@ -1,0 +1,8 @@
+
+  thead, tbody, tfoot, tr, td, th {
+    background: #091020 !important;
+    color: #ffffff !important;
+  }
+  ::-webkit-scrollbar{
+    height: 6px;
+}

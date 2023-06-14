@@ -4,6 +4,7 @@ import axiosInstance from "../../helper/axiosInstance";
 import { message } from 'antd';
 import { setToken } from '../../helper/FormHHelper';
 import { useNavigate } from 'react-router-dom';
+import Dashboard from './dashboard/Dashboard';
 
 const Login = () => {
   const navigate = useNavigate()
@@ -27,7 +28,7 @@ const Login = () => {
       if (response.status === 200) {
         setToken(response.data.token);
         message.success('Login Success');
-        navigate('/admin')
+        navigate('/dashboard/dashboard')
         setUserName('');
         setPassword('');
       } else {

@@ -1,95 +1,109 @@
 import React, { useState } from 'react';
 import './Dashboard.css'; // Import the CSS file
+import { BsLayersHalf , BsTextIndentRight , BsFillRecord2Fill} from 'react-icons/bs';
+import { FiLogOut} from 'react-icons/fi';
+import image from "../../../assets/img/mee.png";
+import { NavLink, Outlet } from 'react-router-dom';
+import { logOut } from '../../../helper/FormHHelper';
 
 function Dashboard() {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
 
   const toggleSidebar = () => {
     setIsActive(!isActive);
   };
 
   return (
+    <div>
     <div className={`sidebar ${isActive ? 'active' : ''}`}>
       <div className="logo_content">
         <div className="logo">
-          <div className="logo_name">Code4education</div>
+          <NavLink to="/" activeclassname="active">
+            <h3 className="links_name mt-4 ms-2">PORTFOLIO</h3>
+          </NavLink>
         </div>
-        <i className="bx bx-menu" id="btn" onClick={toggleSidebar}></i>
+        <i className="bx bx-menu" id="btn" onClick={toggleSidebar}><BsTextIndentRight/></i>
       </div>
       <ul className="nav_list">
         <li>
-          <i className="bx bx-search"></i>
-          <input type="text" placeholder="Search..." onClick={toggleSidebar} />
-          <span className="tooltip">Search</span>
-        </li>
-        <li>
-          <a href="#">
-            <i className="bx bx-grid-alt"></i>
+          <NavLink to="dashboard" activeclassname="active">
+            <i className="bx bx-user"><BsLayersHalf/></i>
             <span className="links_name">Dashboard</span>
-          </a>
+          </NavLink>
           <span className="tooltip">Dashboard</span>
         </li>
         <li>
-          <a href="#">
-            <i className="bx bx-user"></i>
-            <span className="links_name">User</span>
-          </a>
-          <span className="tooltip">User</span>
+          <NavLink to="intro/list" activeclassname="active">
+            <i className="bx bx-user"><BsLayersHalf/></i>
+            <span className="links_name">Intro</span>
+          </NavLink>
+          <span className="tooltip">Intro</span>
         </li>
         <li>
-          <a href="#">
-            <i className="bx bx-chat"></i>
-            <span className="links_name">Messages</span>
-          </a>
-          <span className="tooltip">Messages</span>
+          <NavLink to="about" activeclassname="active">
+            <i className="bx bx-chat"><BsLayersHalf/></i>
+            <span className="links_name">About</span>
+          </NavLink>
+          <span className="tooltip">About</span>
         </li>
         <li>
-          <a href="#">
-            <i className="bx bx-pie-chart-alt-2"></i>
-            <span className="links_name">Analytics</span>
-          </a>
-          <span className="tooltip">Analytics</span>
+          <NavLink to="services" activeclassname="active">
+            <i className="bx bx-pie-chart-alt-2"><BsLayersHalf/></i>
+            <span className="links_name">Services</span>
+          </NavLink>
+          <span className="tooltip">Services</span>
         </li>
         <li>
-          <a href="#">
-            <i className="bx bx-folder"></i>
-            <span className="links_name">File Manager</span>
-          </a>
-          <span className="tooltip">File Manager</span>
+          <NavLink to="skills" activeclassname="active">
+            <i className="bx bx-folder"><BsLayersHalf/></i>
+            <span className="links_name">Skills</span>
+          </NavLink>
+          <span className="tooltip">Skills</span>
         </li>
         <li>
-          <a href="#">
-            <i className="bx bx-cart-alt"></i>
-            <span className="links_name">Order</span>
-          </a>
-          <span className="tooltip">Order</span>
+          <NavLink to="experience" activeclassname="active">
+            <i className="bx bx-cart-alt"><BsLayersHalf/></i>
+            <span className="links_name">Experience</span>
+          </NavLink>
+          <span className="tooltip">Experience</span>
         </li>
         <li>
-          <a href="#">
-            <i className="bx bx-heart"></i>
-            <span className="links_name">Saved</span>
-          </a>
-          <span className="tooltip">Saved</span>
+          <NavLink to="portfolio" activeclassname="active">
+            <i className="bx bx-heart"><BsLayersHalf/></i>
+            <span className="links_name">Portfolio</span>
+          </NavLink>
+          <span className="tooltip">Portfolio</span>
         </li>
         <li>
-          <a href="#">
-            <i className="bx bx-cog"></i>
-            <span className="links_name">Setting</span>
-          </a>
-          <span className="tooltip">Setting</span>
+          <NavLink to="testimonials" activeclassname="active">
+            <i className="bx bx-cog"><BsLayersHalf/></i>
+            <span className="links_name">Testimonial</span>
+          </NavLink>
+          <span className="tooltip">Testimonial</span>
+        </li>
+        <li>
+          <NavLink to="contact" activeclassname="active">
+            <i className="bx bx-cog"><BsLayersHalf/></i>
+            <span className="links_name">Contact</span>
+          </NavLink>
+          <span className="tooltip">Contact</span>
         </li>
         </ul>
       <div className="content">
         <div className="user">
           <div className="user_details">
-            <img src="images/profile.jpg" alt="" />
+            <img src={image} alt="" />
             <div className="name_job">
-              <div className="name">Bhaskar Gupta</div>
-              <div className="job">Web Designer</div>
+              <div className="name">Amir Hamza</div>
+              <div className="job">Web Developer</div>
             </div>
           </div>
-          <i className="bx bx-log-out" id="log_out"></i>
+          <i className="bx bx-log-out" id="log_out" onClick={logOut} ><FiLogOut/></i>
         </div>
+      </div>
+    </div>
+    <div className=''style={isActive ? { marginLeft: '13rem', transition: 'margin-left 0.4s ease' } : { marginLeft: '3rem', transition: 'margin-left 0.4s ease' }} >
+        <Outlet />
       </div>
     </div>
   );
