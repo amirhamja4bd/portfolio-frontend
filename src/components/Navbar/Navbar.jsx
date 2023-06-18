@@ -5,11 +5,13 @@ import { Link } from "react-scroll";
 import { themeContext } from "../../Context";
 import portfolio from "../../assets/img/portfolio.png";
 import { motion } from "framer-motion";
+import { getToken } from "../../helper/FormHHelper";
 
 const Navbar = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
   const [scroll, setScroll] = useState(false);
+  const token = getToken()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,15 +76,22 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
+              <Link to="education" spy={true} smooth={true}>
+              Education
+              </Link>
+            </li>
+            <li>
               <Link to="portfolio" spy={true} smooth={true}>
                 Portfolio
               </Link>
             </li>
+            { token &&
             <li>
               <Link to="testimonial" spy={true} smooth={true}>
                 Testimonial
               </Link>
             </li>
+            }
             {/* <li>
               <Link to="contact" spy={true} smooth={true}>
                 Contact

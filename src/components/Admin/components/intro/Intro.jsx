@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getToken } from '../../../../helper/FormHHelper';
 import { jwtDecode } from '../../../../helper/jwtDecode';
+import Editor from '../../../../helper/Editor';
 
 const Intro = () => {
   const [images, setImages] = useState("");
@@ -115,6 +116,7 @@ const Intro = () => {
             <label htmlFor="description" className="form-label">
               Description
             </label>
+            <Editor designation={designation} setDesignation={setDesignation} />
             <textarea
               className="form-control form-control-sm"
               id="description"
@@ -124,6 +126,19 @@ const Intro = () => {
               required
             ></textarea>
           </div>
+          {/* <div className="mb-3">
+            <label htmlFor="description" className="form-label">
+              Description
+            </label>
+            <textarea
+              className="form-control form-control-sm"
+              id="description"
+              rows="3"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+            ></textarea>
+          </div> */}
         </div>
         <div className="col-md-6 ps-5">
           <h3>Social Link</h3>

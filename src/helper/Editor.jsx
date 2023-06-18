@@ -3,17 +3,17 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 
-const Editor = ({ content, setContent }) => {
+const Editor = ({ designation, setDesignation }) => {
 
   const handleEditorChange = (event, editor) => {
     const data = editor.getData();
-    setContent(data);
+    setDesignation(data);
   };
 
   return (
     <CKEditor
         editor={ClassicEditor}
-        data={content}
+        data={designation}
         config={{
           placeholder: "Write Something..."
         }}

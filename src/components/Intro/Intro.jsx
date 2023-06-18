@@ -37,14 +37,14 @@ const Intro = () => {
                         meaningful contributions to the organization's growth.
                       </p>
                       <div className="mt-4">
-                          <a className="main-btn" target="_blank" href="https://drive.google.com/file/d/1uj5KcyRNQBMsihvMBrhOj76JXlctTsQn/view?usp=drive_link">Download CV</a>
+                          <a className="main-btn" target="_blank" href="https://drive.google.com/file/d/1W5AJM0oa4NQGrk9DTz_6yNzmNhZp-9_e/view?usp=drive_link">Download CV</a>
                       </div>
                   </div>
                   <div className="i-icons d-flex justify-content-md-start justify-content-center mt-5">
                     <a href="https://github.com/amirhamja4bd" target="_blank">
                       <FaGithub />
                     </a>
-                    <a href="https://www.linkedin.com/in/amirhamja656/" target="_blank">
+                    <a href="https://www.linkedin.com/in/amirhamja360/" target="_blank">
                       <FaLinkedinIn />
                     </a>
                     <a href="https://www.facebook.com/amirhamja360" target="_blank">

@@ -390,3 +390,6 @@ html {
     }
 
 }
+.ant-message span{
+    font-size: 16px!important;
+  }

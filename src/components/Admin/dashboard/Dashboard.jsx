@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Dashboard.css'; // Import the CSS file
 import { BsLayersHalf , BsTextIndentRight , BsFillRecord2Fill} from 'react-icons/bs';
 import { FiLogOut} from 'react-icons/fi';
@@ -9,12 +9,24 @@ import { logOut } from '../../../helper/FormHHelper';
 function Dashboard() {
   const [isActive, setIsActive] = useState(true);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const isSmallDevice = window.matchMedia('(max-width: 768px)').matches;
+      setIsActive(!isSmallDevice);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const toggleSidebar = () => {
     setIsActive(!isActive);
   };
 
   return (
-    <div>
+    <div className='dashboard'>
     <div className={`sidebar ${isActive ? 'active' : ''}`}>
       <div className="logo_content">
         <div className="logo">

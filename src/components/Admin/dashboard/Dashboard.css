@@ -262,9 +262,8 @@ ul{
   margin-bottom:15px;
 }
     
-span{
+.dashboard  span{
   font-size: 14px!important;
   font-weight: 600!important;
-  /* color: var(--black-color); */
 }
       

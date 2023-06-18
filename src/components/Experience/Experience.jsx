@@ -12,7 +12,7 @@ const Experience = () => {
         <h2>Self Experience</h2>
       </div>
 
-    <div className="experience mt-5">
+    <div className="experience mt-5" >
       <div className="achievement">
         {/* darkMode */}
         <div className="circle" style={{color: darkMode?'var(--primary-color)':''}}>3+</div>

@@ -10,8 +10,12 @@ import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
 import Works from '../Works/Works';
 import Skills from '../Skills/Skills';
+import { getToken } from '../../helper/FormHHelper';
+import Education from '../Education/Education';
 
 const Home = () => {
+    const token = getToken()
+
     return (
         <div>
             <Navbar />
@@ -20,9 +24,13 @@ const Home = () => {
             <Services />
             <Skills/>
             <Experience />
+            <Education/>
             {/* <Works /> */}
             <Portfolio />
-            <Testimonial />
+            {
+                token &&
+                <Testimonial />
+            }
             <Contact />
             <Footer />
         </div>

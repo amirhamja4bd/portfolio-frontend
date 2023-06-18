@@ -4,6 +4,7 @@ import { Image } from 'antd';
 import { useState } from 'react';
 import { FaArrowLeft, FaFacebookF, FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { PValue } from './Data';
+import HTMLRenderer from '../../helper/HTMLRender';
 
 const Details = () => {
     const navigate = useNavigate();
@@ -31,7 +32,8 @@ const Details = () => {
                 <div className="col-md-6">
                     <div className="">
                     <h4 className='pb-4'>{project.title}</h4>
-                    <p>{project.description}</p>
+                    {/* <p>{project.description}</p> */}
+                    <p className="">{ <HTMLRenderer htmlString={project?.description}/>}</p>
                     {project?.tags?.map((tag, i)=> (
                         <a key={i} className='tag-btn my-2 mx-2'>{tag}</a>
                     ))}
@@ -59,10 +61,11 @@ const Details = () => {
                         visible: false,
                         }}
                         width={600}
-                        height={500}
+                        height={1000}
                         src={project.thumbnail}
                         onClick={() => setVisible(true)}
                         style={{
+                            border: '1px solid white',
                             objectFit: 'cover',
                             objectPosition: 'top',
                             position: 'absolute',
